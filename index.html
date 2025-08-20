@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RianTarot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <div id="initial-video-background" class="hidden">
+        <video autoplay loop muted playsinline>
+            <source src="/static/videos/video0.mp4" type="video/mp4">
+            브라우저에서 비디오 태그를 지원하지 않습니다.
+        </video>
+    </div>
+
+    <!-- ======== VIDEO BACKGROUND FOR DETAILS VIEW ======== -->
+    <div id="video-background" class="hidden">
+        <video autoplay loop muted playsinline>
+            <source src="/static/videos/video6.mp4" type="video/mp4">
+            브라우저에서 비디오 태그를 지원하지 않습니다.
+        </video>
+    </div>
+
+    <!-- ======== VIDEO BACKGROUND FOR RESULTS VIEW ======== -->
+    <div id="results-video-background" class="hidden">
+        <video autoplay loop muted playsinline>
+            <source src="/static/videos/video2.mp4" type="video/mp4">
+            브라우저에서 비디오 태그를 지원하지 않습니다.
+        </video>
+    </div>
+
+
+    <!-- ======== INITIAL VIEW ======== -->
+    <div id="initial-view">
+        <div class="container">
+            <div class="header-logo">RIANTAROT</div>
+            <header>
+                <h1>꿈 해몽</h1>
+                <p>당신의 꿈에 대해 말해 주세요</p>
+            </header>
+            
+        <div class="tarot-card-display">
+            <video autoplay loop muted playsinline>
+             <source src="/static/images/tarot-animation.mp4" type="video/mp4">
+             브라우저에서 비디오 태그를 지원하지 않습니다.
+            </video>
+        </div>
+
+            <form id="tarot-form">
+                <textarea id="situation-input" name="situation" rows="3" placeholder="제 꿈에서 ..."></textarea>
+                <button type="submit">내 꿈 해석하기</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- ======== DETAILS VIEW ======== -->
+    <div id="details-view" class="hidden">
+        <div class="container">
+            <h2>더 알아볼까요?</h2>
+            <p id="progress-text" class="progress-text"></p>
+            
+            <div id="wheel-area">
+                <div id="wheel-container">
+                    <div id="wheel-pointer"></div>
+                    <div id="wheel">
+                        <!-- Segments will be added by JS -->
+                    </div>
+                </div>
+                <button id="spin-btn">다음 질문</button>
+            </div>
+            
+            <div id="question-area" class="hidden">
+                <div id="question-display"></div>
+                <div id="answers-display">
+                    <!-- Answer buttons will be generated here by JS -->
+                </div>
+            </div>
+
+            <div id="details-loader" class="hidden">
+                <p>종합해보면...</p>
+                <div class="spinner" style="margin: 1rem auto; width: 24px; height: 24px;"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ======== RESULTS VIEW ======== -->
+    <div id="results-container" class="hidden">
+        <div class="result-card">
+            
+            <!-- ================== START OF CHANGE ================== -->
+            <div id="dream-image-container" class="hidden">
+                <p id="image-status">꿈의 이미지 생성하기...</p>
+                <img id="dream-image" src="" alt="A visualization of the dream" style="display:none;">
+            </div>
+            <!-- =================== END OF CHANGE =================== -->
+
+            <div id="interpretation-content" class="hidden">
+                <h2>당신의 꿈의 의미는?</h2>
+                <p id="interpretation-text"></p>
+            </div>
+
+            <div id="themes-container" class="hidden">
+                <h3>주요 테마</h3>
+                <ul id="themes-list">
+                    <!-- Themes will be generated here -->
+                </ul>
+            </div>
+
+            <button id="ask-again-btn">다른 꿈 질문하기</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © 2025 RIANTAROT. All rights reserved.</p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
